@@ -193,9 +193,9 @@ POST shj_twitter/tweet/1/_update
     "script" : {
         "source": """
                 if (ctx._source.tags.contains(params.tag)) {
-                    ctx.op = 'delete’ 
+                    ctx.op = 'delete'
                 } else { 
-                    ctx.op = 'none’
+                    ctx.op = 'none'
                 }
                        """,
         "lang": "painless",
