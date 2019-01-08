@@ -7,13 +7,13 @@
 
 .es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=count).add(.es(index=kibana_sample_data_flights, timefield=timestamp, metric=count))
 
-.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price).label(¸ÅÃâ¾×ÃÑÇÕ)
+.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price).label(ë§¤ì¶œì•¡ì´í•©)
 
-.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price).label(¸ÅÃâ¾×ÃÑÇÕ),
-.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price, offset=-1d).label(ÀüÀÏ¸ÅÃâ¾×ÃÑÇÕ)
+.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price).label(ë§¤ì¶œì•¡ì´í•©),
+.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price, offset=-1d).label(ì „ì¼ë§¤ì¶œì•¡ì´í•©)
 
-.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price).label(¸ÅÃâ¾×ÃÑÇÕ),
-.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price).label(¸ÅÃâ±Ş°¨).if(gt, 11000, null)
+.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price).label(ë§¤ì¶œì•¡ì´í•©),
+.es(index=kibana_sample_data_ecommerce, timefield=order_date, metric=sum:products.base_price).label(ë§¤ì¶œê¸‰ê°).if(gt, 11000, null)
 
 
 
@@ -41,40 +41,40 @@ Instant.ofEpochMilli(doc['order_date'].date.millis).atZone(ZoneId.of("Asia/Seoul
 day_of_week_order_kor
 Instant.ofEpochMilli(doc['order_date'].date.millis).atZone(ZoneId.of("Asia/Seoul")).dayOfWeek
 
-°¡°İ´ë
+ê°€ê²©ëŒ€
 if (doc['taxful_total_price'].value < 100) 
 { 
-  return "Àú°¡" 
+  return "ì €ê°€" 
 }
 else if (doc['taxful_total_price'].value < 200) 
 { 
-  return "Áß°¡" 
+  return "ì¤‘ê°€" 
 }
 else 
 { 
-  return "°í°¡" 
+  return "ê³ ê°€" 
 }
 
 
 
 [DevTools]
-À¯¿ëÇÑ API
+ìœ ìš©í•œ API
 
 GET _cat/indices  
-  : ¸ğµç index È®ÀÎ
+  : ëª¨ë“  index í™•ì¸
 
 GET index_name/type_name/_search
-  : ¼±ÅÃµÈ index, type¿¡ ÀÖ´Â ¸ğµç document È®ÀÎ
+  : ì„ íƒëœ index, typeì— ìˆëŠ” ëª¨ë“  document í™•ì¸
 
 PUT index_name/type_name/1
 {
   "name" : "shj",
   "email" : "shinhj0728@gmail.com"
 }
-  : Æ¯Á¤ id¿¡ document Ãß°¡(1)
+  : íŠ¹ì • idì— document ì¶”ê°€(1)
 
 GET index_name/type_name/1
-  : document id·Î document È®ÀÎ
+  : document idë¡œ document í™•ì¸
 
 
 
