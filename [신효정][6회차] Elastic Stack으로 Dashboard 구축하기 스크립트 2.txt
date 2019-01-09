@@ -81,5 +81,5 @@ $ bin/logstash -f rdbms.conf
 
 [ kibana - scripted field]
 
-
+doc['Ship Date'].date.dayOfYear - doc['Order Date'].date.dayOfYear
 
