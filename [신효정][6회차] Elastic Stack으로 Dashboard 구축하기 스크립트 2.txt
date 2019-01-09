@@ -6,7 +6,7 @@ DELETE myrdbms
 PUT myrdbms
 {
   "mappings": {
-    "myfile": {
+    "myrdbms": {
       "properties": {
         "age": {
           "type": "integer"
