@@ -1,1 +1,61 @@
-dd
+**Kibana - mapping**
+
+GET _cat/indices
+
+DELETE myfile
+PUT myfile
+{
+  "mappings": {
+    "myfile": {
+      "properties": {
+        "Country": {
+          "type": "keyword"
+        },
+        "Item Type": {
+          "type": "keyword"
+        },
+        "Order Date": {
+          "type": "date",
+          "format": "MM/dd/yyyy"
+        },
+        "Order ID": {
+          "type": "integer"
+        },
+        "Order Priority": {
+          "type": "keyword"
+        },
+        "Region": {
+          "type": "keyword"
+        },
+        "Sales Channel": {
+          "type": "keyword"
+        },
+        "Total Cost": {
+          "type": "float"
+        },
+        "Total Profit": {
+          "type": "float"
+        },
+        "Total Revenue": {
+          "type": "float"
+        },
+        "Unit Cost": {
+          "type": "float"
+        },
+        "Unit Price": {
+          "type": "float"
+        },
+        "Units Sold": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
+
+GET myfile/_search
+GET myfile/_mapping
+
+
+
+
