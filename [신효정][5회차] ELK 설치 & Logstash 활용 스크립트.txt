@@ -1,10 +1,10 @@
 EC2 접속 - mac(window는 putty)
-
 $ chmod 400 FC-elastic6.pem
  --> (1회만 해주면 됨)
 $ ssh -i FC-elastic6.pem ec2-user@ec2-52-79-142-75.ap-northeast-2.compute.amazonaws.com
 
-**윈도우에서 putty 사용시 브라우저에서 복사할 명령어를 선택하고 복사(control+C) 하신 후 putty에서 우클릭 하시면 붙여넣기가 됩니다.**
+** 윈도우에서 putty 사용시 브라우저에서 복사할 명령어를 선택하고 복사(control+C) 하신 후 putty에서 우클릭 하시면 붙여넣기가 됩니다. **
+** 명령어를 복사하실때는 한줄씩 $ <-- 이부분을 제외하고 복사 후 붙여넣으세요 **
 
 
 
@@ -137,7 +137,11 @@ $ sudo kill -9 27961
 
 Logstash - ex1
 $ cd ~/logstash-6.5.4
+
+# ex1.conf 파일의 내용을 확인합니다.
 $ vi ~/data/ex1.conf 
+
+# ex1.conf 파일을 실행하는 명령어
 $ bin/logstash -f ~/data/ex1.conf
 
 Logstash - ex2
